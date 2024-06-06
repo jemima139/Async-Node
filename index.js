@@ -49,7 +49,6 @@ app.delete('/api/data/:id', async (req, res) => {
     const index = mockDatabase.findIndex(item => item.id === id);
     if (index !== -1) {
         const deletedData = mockDatabase.splice(index, 1);
-        // await simulateDelay(null, 500);
         setTimeout(() => res.json(mockDatabase[index]), 500);
         res.json(deletedData[0]);
     } else {
